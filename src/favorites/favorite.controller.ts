@@ -3,7 +3,7 @@ import { Body, Controller, Get, Param, Patch, Post, Put, UseGuards } from '@nest
 import { AuthGuard } from '@nestjs/passport';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateFavoritesDto } from './dto/create-favorite.dto';
-import { UpdateFavoritesDto } from './dto/update-favorites.dto';
+import { UpdateFavoritesDto } from './dto/update-favorite.dto';
 import { FavoritesService } from './favorites.service';
 
 @ApiTags('favorites')
