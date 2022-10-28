@@ -6,7 +6,7 @@ export class CreateGameDto {
   @IsString()
   @ApiProperty({
     description: 'Nome do jogo',
-    example: 'Red Dead Redemption 2',
+    example: 'Zelda',
   })
   title: string;
 
@@ -14,20 +14,20 @@ export class CreateGameDto {
   @ApiProperty({
     description: 'Capa do Jogo',
     example:
-      'https://img.olhardigital.com.br/wp-content/uploads/2021/05/Red-Dead-Redemption-2-Divulgacao.jpg',
+      'https://upload.wikimedia.org/wikipedia/pt/3/31/The_Legenda_of_Zelda_A_Link_to_the_Past_capa.png',
   })
   coverImageUrl: string;
 
   @IsString()
   @ApiProperty({
     description: 'Descrição do jogo',
-    example: 'Jogo foda',
+    example: 'Jogo maravilhoso',
   })
   description: string;
 
   @ApiProperty({
     description: 'Ano de lançamento',
-    example: 2018,
+    example: 1993,
   })
   year: number;
 
@@ -47,14 +47,14 @@ export class CreateGameDto {
   @IsUrl()
   @ApiProperty({
     description: 'Gameplay',
-    example: 'https://www.youtube.com/watch?v=Dw_oH5oiUSE',
+    example: 'https://www.youtube.com/watch?v=Z6hjG6MCcZ8',
   })
   gameplayYouTubeUrl: string;
 
   @IsString()
   @ApiProperty({
     description: 'Gênero do jogo',
-    example: 'Ação'
+    example: 'RPG'
   })
   genreGame?: string;
 }

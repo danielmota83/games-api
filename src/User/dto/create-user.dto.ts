@@ -1,8 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { ApiProperty } from '@nestjs/swagger';
 import {
-  IsBoolean,
-  IsNumber,
   IsString,
   Matches,
   MaxLength,
@@ -33,7 +31,8 @@ export class CreateUserDto {
 
   @IsString()
   @MinLength(6)
-  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
+  @Matches(/(?![.\n])(?=.*[a-z]).*$/, {
+  // @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
     message: 'Senha muito fraca',
   })
   @ApiProperty({

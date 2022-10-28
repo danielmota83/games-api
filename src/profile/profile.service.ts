@@ -11,7 +11,7 @@ import { Profile } from './entities/profile.entity';
 export class ProfileService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(createProfileDto: CreateProfileDto) {
+  async create(createProfileDto: CreateProfileDto) {
     const data: Prisma.ProfileCreateInput = {
       user: {
         connect: {
@@ -21,17 +21,20 @@ export class ProfileService {
       title: createProfileDto.title,
       imageUrl: createProfileDto.imageUrl,
     };
-    return this.prisma.profile
-      .create({
-        data,
-        select: {
-          id: true,
-          title: true,
-          imageUrl: true,
-          user: true,
-        },
-      })
-      .catch(this.handleError);
+    try {
+      return await this.prisma.profile
+        .create({
+          data,
+          select: {
+            id: true,
+            title: true,
+            imageUrl: true,
+            user: true,
+          },
+        });
+    } catch (error) {
+      return this.handleError(error);
+    }
   }
 
   findAll(user: User) {

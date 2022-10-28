@@ -15,7 +15,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Xbox-Live')
+    .setTitle('Snes-Retro')
     .setDescription('Aplicação de usúarios')
     .setVersion('1.0.0')
     .addTag('status')
